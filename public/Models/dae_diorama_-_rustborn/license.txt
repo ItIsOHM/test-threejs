@@ -1,0 +1,11 @@
+Model Information:
+* title:	DAE Diorama - Rustborn
+* source:	https://sketchfab.com/3d-models/dae-diorama-rustborn-592741f23d0a4ccba20107493e6c5439
+* author:	Gergő Borsos (https://sketchfab.com/gergoborsos)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DAE Diorama - Rustborn" (https://sketchfab.com/3d-models/dae-diorama-rustborn-592741f23d0a4ccba20107493e6c5439) by Gergő Borsos (https://sketchfab.com/gergoborsos) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
