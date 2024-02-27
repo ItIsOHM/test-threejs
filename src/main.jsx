@@ -2,18 +2,21 @@ import * as THREE from "three";
 import "./index.css";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
+import {GLTFLoader} from "three/addons/loaders/GLTFLoader";
 
 const scene = new THREE.Scene();
 
-const geometry = new THREE.SphereGeometry(3, 64, 64);
-const material = new THREE.MeshStandardMaterial({ color: 0xfc4822, roughness: 0.2, metalness: 0.5});
+const loader = new GLTFLoader();
 
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
+loader.load("public/Models/dae_diorama_-_rustborn/scene.gltf", function (gltf) {
+  scene.add(gltf.scene);
+}, undefined, function (error) {
+  console.error(error);
+});
 
-const light = new THREE.PointLight(0xffffff, 50, 100);
+const light = new THREE.PointLight(0xffffff, 1000, 100);
 scene.add(light);
-light.position.set(5, 5, 5);
+light.position.set(15, 15, 15);
 
 const camera = new THREE.PerspectiveCamera(
   45,
@@ -21,7 +24,11 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.z = 20;
+// camera.position.x = 0;
+camera.position.z = 35;
+// camera.position.y = 10;
+// camera.rotation.x = 180;
+// camera.rotation.z = 90;
 
 scene.add(camera);
 
@@ -36,7 +43,7 @@ const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.enableZoom = false;
-controls.autoRotate = true;
+// controls.autoRotate = true;
 controls.autoRotateSpeed = 5;
 
 window.addEventListener("resize", () => {
@@ -59,7 +66,7 @@ const tl = gsap.timeline({
   },
 });
 
-tl.fromTo(mesh.scale, {x:0, y: 0, z:0 }, {x: 1, y: 1, z: 1 });
+tl.fromTo(scene.scale, {x:0, y: 0, z:0 }, {x: 1, y: 1, z: 1 });
 tl.fromTo("nav", {y: "-100%"}, {y: "0%", duration: 2, ease: "power2.out"}, "-=1");
 tl.fromTo(".title", {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1, ease: "power2.out"}, "-=1");
 
