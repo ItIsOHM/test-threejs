@@ -8,7 +8,7 @@ const scene = new THREE.Scene();
 
 const loader = new GLTFLoader();
 
-loader.load("@/public/Models/dae_diorama_-_rustborn/scene.gltf", function (gltf) {
+loader.load("./assets/Models/dae_diorama_-_rustborn/scene.gltf", function (gltf) {
   scene.add(gltf.scene);
 }, undefined, function (error) {
   console.error(error);
