@@ -8,7 +8,7 @@ const scene = new THREE.Scene();
 
 const loader = new GLTFLoader();
 
-loader.load("public/Models/dae_diorama_-_rustborn/scene.gltf", function (gltf) {
+loader.load("@/public/Models/dae_diorama_-_rustborn/scene.gltf", function (gltf) {
   scene.add(gltf.scene);
 }, undefined, function (error) {
   console.error(error);
@@ -87,10 +87,5 @@ window.addEventListener("mousemove", (e) => {
       Math.floor(Math.random() * 255),
       Math.floor(Math.random() * 255),
     ];
-    gsap.to(mesh.material.color, {
-      r: rgb[0] / 255,
-      g: rgb[1] / 255,
-      b: rgb[2] / 255,
-    });
   }
 });
